@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
+
+Route::get('users', 'UserController@index');
+Route::get('users/{user}', 'UserController@show');
+
+Route::get('compliments/given', 'ComplimentController@given');
+Route::get('compliments/received', 'Complimentscontroller@received');
+Route::post('compliments', 'ComplimentController@store');

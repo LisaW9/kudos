@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Compliment;
 
 class User extends Authenticatable
 {
@@ -26,4 +27,19 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /*public function compliments()
+    {
+        return $this->hasMany(Compliment::class);
+    }*/
+
+    public function complimentsGiven()
+    {
+        return $this->hasMany(Compliment::class, 'giver', 'id');
+    }
+
+    public function complimentsReceived()
+    {
+        return $this->hasMany(Compliment::class, 'receiver', 'id');
+    }
 }
