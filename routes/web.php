@@ -10,8 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', 'HomeController@index');
+
+Route::get('users/facebook', 'UserController@redirectToFacebook');
+Route::get('users/handlefacebookcallback', 'UserController@handleFacebookCallback');
 
 Route::get('users', 'UserController@index');
 Route::get('users/{user}', 'UserController@show');

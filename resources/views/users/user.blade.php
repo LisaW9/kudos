@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'User')
+@section('title', $user->name)
 
 @section('content')
     @parent

@@ -11,7 +11,7 @@ class ComplimentController extends Controller
     {
         $compliment = new Compliment();
         $compliment->compliment = $request->compliment;
-        $compliment->giver = /*Auth::user()*/ 1;
+        $compliment->giver = Auth::user();
         $compliment->receiver = $request->receiver;
         $compliment->save();
 
