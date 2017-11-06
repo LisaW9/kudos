@@ -1,7 +1,17 @@
 @extends('layouts.app')
 
-@section('title', 'Home')
+@section('title', 'Given compliments')
 
 @section('content')
-    <h1>Welcome, {{$user->name}}</h1>
+    <h1>Given compliments</h1>
+    <ul>
+        @forelse($user->complimentsGiven as $compliment)
+            <li>To: <a href="{{$compliment->getReceiver->id}}">{{ $compliment->getReceiver->name }}</a>
+                - {{$compliment->compliment}}</li>
+        @empty
+            <p>You haven't given any compliments yet >:(</p>
+        @endforelse
+    </ul>
+
+
 @endsection

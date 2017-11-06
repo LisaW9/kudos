@@ -11,7 +11,7 @@
 
 <header>
     <nav>
-        <a href="/home">home</a>
+        <a href="/">home</a>
         <a href="/users">users</a>
         <a href="/compliments/given">given compliments</a>
         <a href="/compliments/received">received compliments</a>
